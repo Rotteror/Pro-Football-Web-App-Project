@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
+
+const userController = require('./controllers/userController');
+
 const cookieParser = require('cookie-parser');
 const cookieSecret = 'MySecret';
 
@@ -37,6 +40,8 @@ async function start() {
     app.get('/', (req, res) => {
         res.send('REST Service Operational. Send requiest to /api');
     })
+
+    app.use('/api/users', userController);
 
     app.listen(3000, () => console.log('Server listen on port 3000'));
 }
