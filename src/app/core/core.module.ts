@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 
 
 
@@ -14,6 +15,7 @@ import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
     HomeComponent,
     FeatureLogosComponent,
     FooterComponent,
+    HowItWorksComponent,
   ],
   imports: [
     CommonModule,

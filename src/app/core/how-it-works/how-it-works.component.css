@@ -1,0 +1,59 @@
+/********************/
+/* HOW IT WORK COMPONENTS */
+.section-how {
+    padding: 9.6rem 0;
+}
+
+.step-number {
+    font-size: 8.6rem;
+    font-weight: 600;
+    color: #bbb;
+
+    margin-bottom: 1.2rem;
+}
+
+.step-description {
+    font-size: 1.8rem;
+    line-height: 1.8;
+    
+}
+
+.step-img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.step-img {
+    border-radius: 3.0rem;
+    width: 30%;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+    content: "";
+    display: block;
+    position: absolute;
+   
+    bottom: 0;
+    right: 0;
+
+}
+
+
+.step-img-box::before {
+    width: 100%;
+    padding-bottom: 60%;
+    background: linear-gradient(45deg,#ffd43b, #fff);
+    border-radius: 500px;
+    z-index: -2;
+}
+
+.step-img-box::after {
+    width: 90%;
+    padding-bottom: 45%;
+    background: linear-gradient(45deg,#fab005, #fff);
+    border-radius: 500px;
+    z-index: -1;
+}
