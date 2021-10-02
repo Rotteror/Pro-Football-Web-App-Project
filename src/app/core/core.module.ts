@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
+import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
 
 
 
@@ -11,7 +12,8 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     HeaderComponent,
     HomeComponent,
-    FooterComponent
+    FeatureLogosComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
   exports: [
     HeaderComponent,
     FooterComponent,
+    FeatureLogosComponent,
     HomeComponent
   ]
 })
