@@ -6,6 +6,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { StandingComponent } from './standing/standing.component';
 
 
 
@@ -16,6 +17,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     FeatureLogosComponent,
     FooterComponent,
     HowItWorksComponent,
+    StandingComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
     HeaderComponent,
     FooterComponent,
     FeatureLogosComponent,
+    HowItWorksComponent,
     HomeComponent
   ]
 })

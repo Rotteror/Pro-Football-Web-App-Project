@@ -12,6 +12,7 @@
 
 .logo {
     width: 50%;
+    height: 50%;
 }
 
 /********************/
@@ -25,12 +26,19 @@
 }
 
 .main-nav-link:link, .main-nav-link:visited {
-    display: inline-block;
+    display: block;
     text-decoration: none;
     color: #000;
     font-size: 1.8rem;
     font-weight: 500;
+    transition: all 0.5s;
 }
+
+.main-nav-link:hover, .main-nav-link:active {
+    color: #555;
+}
+
+
 
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
