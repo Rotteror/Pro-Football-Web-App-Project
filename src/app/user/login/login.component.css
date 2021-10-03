@@ -3,8 +3,12 @@
 
 
 .forms-heading {
-    margin: 8.2rem 0;
+    margin: 8.2rem auto;
+    letter-spacing: -1.5px;
+    align-self: center;
+    text-align: center;
 }
+
 
 .login-form {
     display: flex;
@@ -48,7 +52,11 @@
 .input-auth {
     height: 2.5rem;
     width: 30rem;
+    padding: 1.3rem 2rem;
+    border: 1px solid #555;
+    border-radius: 9px;
 }
+
 
 .form-label {
     margin-bottom: 1.4rem;
@@ -69,5 +77,5 @@
 }
 
 .link-auth:hover, .link-auth:active {
-   color: #f59f00;
+   color: #f08c00;
 }

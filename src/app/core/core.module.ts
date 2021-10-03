@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { StandingComponent } from './standing/standing.component';
+import { NewsletterComponent } from './newsletter/newsletter.component';
 
 
 
@@ -18,6 +19,7 @@ import { StandingComponent } from './standing/standing.component';
     FooterComponent,
     HowItWorksComponent,
     StandingComponent,
+    NewsletterComponent,
   ],
   imports: [
     CommonModule,
