@@ -23,4 +23,10 @@ export class UserService {
       tap((user) => this.currentUser = user)
     );
   };
+
+  login(data: { email: string; password: string }) {
+    return this.http.post<IUser>(`${API_URL}/users/login`, data, { withCredentials: true }).pipe(
+      tap((user) => this.currentUser = user)
+    );
+  };
 }

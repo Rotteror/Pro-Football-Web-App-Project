@@ -80,3 +80,9 @@
 .link-auth:hover, .link-auth:active {
    color: #f08c00;
 }
+
+.error {
+    font-size: 1.6rem;
+    color: #ff6b6b;
+    font-weight: 400;
+}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+
+  constructor(private fb: FormBuilder, private userService: UserService) {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(5)]]
+    });
+  }
 
   ngOnInit(): void {
   }
 
+  loginHandler(): void {
+    if (this.form.invalid) { return };
+    const { email, password } = this.form.value;
+    this.userService.login({ email, password }).subscribe({
+      next: (result) => {
+        localStorage.setItem('_id', result._id)
+      }
+    });
+  }
 }

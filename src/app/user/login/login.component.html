@@ -3,14 +3,30 @@
         <h2 class="heading-primary forms-heading">Login</h2>
     </div>
     <div class="container">
-        <form class="login-form" action="">
+        <form class="login-form" [formGroup]="form" (ngSubmit)="loginHandler()">
             <div class="form-container">
                 <label class="form-label" for="email">Email</label>
-                <input class="input-auth" type="email" id="loginEmal">
+                <input class="input-auth" type="email" id="loginEmal" formControlName="email">
+                <ng-container *ngIf="form.get('email')?.touched">
+                    <p *ngIf="form.get('email')?.errors?.required" class="error">
+                        Email is required
+                    </p>
+                    <p *ngIf="form.get('email')?.errors?.email" class="error">
+                        Please enter valid email
+                    </p>
+                </ng-container>
             </div>
             <div class="form-container">
                 <label class="form-label" for="password">Password</label>
-                <input class="input-auth" type="text" id="loginEmal">
+                <input class="input-auth" type="password" formControlName="password">
+                <ng-container *ngIf="form.get('password')?.touched">
+                    <p *ngIf="form.get('password')?.errors?.required" class="error">
+                        Password is required
+                    </p>
+                    <p *ngIf="form.get('password')?.errors?.minlength" class="error">
+                        Password should be at least 5 characters long
+                    </p>
+                </ng-container>
             </div>
             <div class="btn form-container">
                 <button class="btn-login">Login</button>
