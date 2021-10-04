@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './user.service';
+import { CustomValidatorService } from './validator/custom-validator.service';
 
 
 
@@ -24,7 +25,8 @@ import { UserService } from './user.service';
     RegisterComponent
   ],
   providers:[
-    UserService
+    UserService,
+    CustomValidatorService
   ]
 })
 export class UserModule { }

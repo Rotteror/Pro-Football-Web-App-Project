@@ -9,18 +9,61 @@
                 <div class="register-container">
                     <label class="form-label" for="username">Username</label>
                     <input class="input-auth" type="text" formControlName="username">
-                    <label class="form-label" for="username">Full Name</label>
+                    <ng-container *ngIf="form.get('username')?.touched">
+                        <p *ngIf="form.get('username')?.errors?.required" class="error">
+                            Username is required
+                        </p>
+                        <p *ngIf="form.get('username')?.errors?.minlength" class="error">
+                            Username should be at least 5 characters long
+                        </p>
+                    </ng-container>
+                    <label class="form-label" for="fullName">Full Name</label>
                     <input class="input-auth" type="text" formControlName="fullName">
+                    <ng-container *ngIf="form.get('fullName')?.touched">
+                        <p *ngIf="form.get('fullName')?.errors?.required" class="error">
+                            This field is required
+                        </p>
+                    </ng-container>
                     <label class="form-label" for="address">Address</label>
                     <input class="input-auth" type="text" formControlName="address">
+                    <ng-container *ngIf="form.get('address')?.touched">
+                        <p *ngIf="form.get('address')?.errors?.required" class="error">
+                            This field is required
+                        </p>
+                    </ng-container>
                 </div>
                 <div class="register-container">
                     <label class="form-label" for="email">Email</label>
                     <input class="input-auth" type="email" formControlName="email">
+                    <ng-container *ngIf="form.get('email')?.touched">
+                        <p *ngIf="form.get('email')?.errors?.required" class="error">
+                            Email is required
+                        </p>
+                        <p *ngIf="form.get('email')?.errors?.email" class="error">
+                            Invalid email!
+                        </p>
+                    </ng-container>
+
                     <label class="form-label" for="password">Password</label>
                     <input class="input-auth" type="password" formControlName="password">
+                    <ng-container *ngIf="form.get('password')?.touched">
+                        <p *ngIf="form.get('password')?.errors?.required" class="error">
+                            Password is required!
+                        </p>
+                        <p *ngIf="form.get('password')?.errors?.minlength" class="error">
+                            Password must be at least 6 characters!
+                        </p>
+                    </ng-container>
                     <label class="form-label" for="rePassword">Confrim Password</label>
                     <input class="input-auth" type="password" formControlName="rePassword">
+                    <ng-container *ngIf="form.get('rePassword')?.touched">
+                        <p *ngIf="form.get('rePassword')?.errors?.required" class="error">
+                            Password is required!
+                        </p>
+                        <p *ngIf="form.get('rePassword')?.errors?.passwordMissmatch" class="error">
+                            Confirm password don't match
+                        </p>
+                    </ng-container>
                 </div>
             </div>
             <div class="checkbox-layout">
