@@ -3,23 +3,24 @@
         <h2 class="heading-primary forms-heading">Register</h2>
     </div>
     <div class="container">
-        <form class="register-form" action="">
+        <form class="register-form" [formGroup]="form" (ngSubmit)='registerHandler()'>
+            {{form.value | json}}
             <div class="grid grid--2-cols">
                 <div class="register-container">
                     <label class="form-label" for="username">Username</label>
-                    <input class="input-auth" type="text">
+                    <input class="input-auth" type="text" formControlName="username">
                     <label class="form-label" for="username">Full Name</label>
-                    <input class="input-auth" type="text">
+                    <input class="input-auth" type="text" formControlName="fullName">
                     <label class="form-label" for="address">Address</label>
-                    <input class="input-auth" type="text">
+                    <input class="input-auth" type="text" formControlName="address">
                 </div>
                 <div class="register-container">
                     <label class="form-label" for="email">Email</label>
-                    <input class="input-auth" type="email">
+                    <input class="input-auth" type="email" formControlName="email">
                     <label class="form-label" for="password">Password</label>
-                    <input class="input-auth" type="text">
+                    <input class="input-auth" type="password" formControlName="password">
                     <label class="form-label" for="rePassword">Confrim Password</label>
-                    <input class="input-auth" type="text">
+                    <input class="input-auth" type="password" formControlName="rePassword">
                 </div>
             </div>
             <div class="checkbox-layout">

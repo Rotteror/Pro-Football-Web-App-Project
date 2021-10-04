@@ -1,12 +1,15 @@
 const router = require('express').Router();
 const { authCookieName } = require('../config');
-const { register, login } = require('../services/users');
+const { register, login } = require('../services/user');
 
 router.post('/register', async (req, res) => {
 
     const username = req.body.username;
+    const fullName = req.body.fullName;
+    const address = req.body.address;
     const email = req.body.email;
     const password = req.body.password;
+    
     try {
         if (!email.trim()) {
             throw new Error('Email is required');
@@ -14,8 +17,14 @@ router.post('/register', async (req, res) => {
         if (password.trim().length < 6) {
             throw new Error('Password must be at least 6 characters long');
         }
+        if (!fullName.trim()) {
+            throw new Error('Full Name is required');
+        }
+        if (!address.trim()) {
+            throw new Error('Address is required');
+        }
 
-        const userData = await register(username, email.toLocaleLowerCase(), password.trim());
+        const userData = await register(username, email.toLocaleLowerCase(), password.trim(), fullName, address);
         res.cookie(authCookieName, userData.accessToken, { httpOnly: true })
         res.json(userData)
     } catch (err) {

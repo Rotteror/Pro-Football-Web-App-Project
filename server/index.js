@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
-
+const auth = require('./middlewares/auth')
 const userController = require('./controllers/userController');
 
 const cookieParser = require('cookie-parser');
