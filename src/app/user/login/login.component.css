@@ -46,15 +46,16 @@
 
 
 .btn-login:hover, .btn-login:active {
+    cursor: pointer;
     opacity: 70%;
 }
 
 .input-auth {
-    height: 2.5rem;
+    height: 4rem;
     width: 30rem;
     padding: 1.3rem 2rem;
     border: 1px solid #555;
-    border-radius: 9px;
+    border-radius: 7px;
 }
 
 
