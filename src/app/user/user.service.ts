@@ -29,4 +29,10 @@ export class UserService {
       tap((user) => this.currentUser = user)
     );
   };
+  
+  logout() {
+    return this.http.get<IUser>(`${API_URL}/users/logout`, { withCredentials: true }).pipe(
+      tap(() => this.currentUser = undefined)
+    );
+  };
 }
