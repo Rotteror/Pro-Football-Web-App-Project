@@ -15,12 +15,18 @@
     display: flex;
     align-items: center;
     gap: 5.2rem;
+    transition: all 0.5s;
 } 
 
 .logo-img {
     height: 6.2rem;
     filter: brightness(0);
     opacity: 50%;
+}
+
+.logo-img:hover {
+    opacity: 100%;
+    filter: none;
 }
 
 .h2-features{
