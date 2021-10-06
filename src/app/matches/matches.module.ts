@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BookieCardsComponent } from './bookie-cards/bookie-cards.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BookieCardsComponent
+  ],
   imports: [
     CommonModule
   ]
