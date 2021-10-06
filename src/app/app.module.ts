@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserModule } from './user/user.module';
 import { SharedModule } from './shared/shared.module';
+import { MatchesModule } from './matches/matches.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     SharedModule,
     UserModule,
+    MatchesModule,
     FontAwesomeModule,
     AppRoutingModule
   ],
