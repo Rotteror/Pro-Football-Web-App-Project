@@ -6,6 +6,7 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './user.service';
 import { CustomValidatorService } from './validator/custom-validator.service';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
@@ -19,6 +20,7 @@ import { CustomValidatorService } from './validator/custom-validator.service';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    UserRoutingModule,
   ],
   exports: [
     LoginComponent,

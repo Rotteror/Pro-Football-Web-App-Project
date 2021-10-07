@@ -8,6 +8,7 @@ import { FeatureLogosComponent } from './feature-logos/feature-logos.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { StandingComponent } from './standing/standing.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -23,7 +24,8 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   exports: [
     HeaderComponent,

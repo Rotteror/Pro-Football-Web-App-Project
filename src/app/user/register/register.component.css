@@ -15,8 +15,10 @@
 }
 
 .forms-heading {
-    text-align: center;
+    margin: 8.2rem auto;
     letter-spacing: -1.5px;
+    align-self: center;
+    text-align: center;
 }
 
 .input-auth {
