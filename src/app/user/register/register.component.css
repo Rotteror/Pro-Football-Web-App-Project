@@ -1,5 +1,10 @@
 /********************/
 /* REGISTER COMPONENTS */
+
+.section-login {
+    margin-bottom: 12.8rem;
+}
+
 .register-form {
     display: flex;
     flex-direction: column;
