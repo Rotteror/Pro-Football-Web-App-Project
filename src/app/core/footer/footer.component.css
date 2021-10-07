@@ -42,6 +42,7 @@
 
 .footer-link:link, .footer-link:visited{
     text-decoration: none;
+    display: block;
     font-size: 1.4rem;
     color: #555;
     transition: all 0.5s;
