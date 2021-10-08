@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faTwitter, faInstagram, faGoogle, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { UserService } from 'src/app/user/user.service';
 
 
 @Component({
@@ -9,6 +10,10 @@ import { faFacebook, faTwitter, faInstagram, faGoogle, faYoutube } from '@fortaw
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  get isLogged(): boolean {
+    return this.userService.isLogged;
+  }
 
   icons = {
     faChevronDown,
@@ -19,7 +24,7 @@ export class HeaderComponent implements OnInit {
     faYoutube,
   }
 
-  constructor() { }
+  constructor(private userService: UserService) { }
   
   ngOnInit(): void {
   }
