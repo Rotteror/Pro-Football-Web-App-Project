@@ -47,13 +47,13 @@
     background-color: #ffd43b;
     transition: all 0.5s;
 }
+.header-layout {
+    background: linear-gradient(45deg,#ffd43b, #fff);
+}
 
 /********************/
 /* MATCHES LAYOUT COMPONENTS */
 
-.header-layout {
-    background: linear-gradient(45deg,#ffd43b, #fff);
-}
 
 .matches-layout {
     display: flex;

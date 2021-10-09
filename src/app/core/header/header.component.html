@@ -9,6 +9,7 @@
                 <li><a class="main-nav-link" routerLink="/home">Home</a></li>
                 <li><a class="main-nav-link" href="#">Standings</a></li>
                 <li><a class="main-nav-link" routerLink="/matches">Matches</a></li>
+                <li><a class="main-nav-link" routerLink="/matches/create">Add Matches</a></li>
                 <li *ngIf="!isLogged"><a class="main-nav-link" routerLink="/register">Sign up</a></li>
                 <li *ngIf="!isLogged"><a class="main-nav-link" routerLink="/login">Login</a></li>
                 <li><a class="main-nav-link nav-cta" href="#">Bet now</a></li>
@@ -24,7 +25,7 @@
             tips and soccer betting predictions.</p>
         <p class="subheading">Pro Football is based in London, UK</p>
         <div class="header-social-icons">
-            <ul class="header-list-icons">
+            <!-- <ul class="header-list-icons">
                 <li><a href="#">
                         <fa-icon class="header-social-icons" [icon]="icons.faFacebook"></fa-icon>
                     </a></li>
@@ -40,7 +41,7 @@
                 <li><a href="#">
                         <fa-icon class="header-social-icons" [icon]="icons.faYoutube"></fa-icon>
                     </a></li>
-            </ul>
+            </ul> -->
         </div>
     </div>
     <div class="header-animated-div">

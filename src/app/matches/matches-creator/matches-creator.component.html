@@ -1,0 +1,96 @@
+<header class="header header-layout">
+    <a href="#">
+        <img class="logo" src="../../../assets/profootball-logo.png" alt="ProFootball Logo">
+    </a>
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <li><a class="main-nav-link" href="#">Home</a></li>
+            <li><a class="main-nav-link" href="#">Standings</a></li>
+            <li><a class="main-nav-link" href="#">Matches</a></li>
+            <li><a class="main-nav-link" href="#">Sign up</a></li>
+            <li><a class="main-nav-link" href="#">Login</a></li>
+            <li><a class="main-nav-link nav-cta" href="#">Bet now</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="content-container">
+        <header>
+            <div class="head-row">
+                <h2 class="heading-secondary head-row">Create Match List</h2>
+            </div>
+        </header>
+        <form class="list-matches" [formGroup]="form" (ngSubmit)='createMatchList()'>
+            <div class="league-match">
+                <p>Create Math List</p>
+            </div>
+            {{form.value | json}}
+            <div class="li-match">
+                <div class="match-row">
+                    <label class="match">Match No.1</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="host1">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford" >
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.2</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.3</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.4</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.5</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.6</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.7</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.8</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.9</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+                <div class="match-row">
+                    <label class="match">Match No.10</label>
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool">
+                    <label for="space"><strong>&mdash;</strong></label>
+                    <input class="input-match" type="text" name="name" placeholder="Watford">
+                </div>
+            </div>
+            <div class="btn">
+                <button class="btn-submit" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
