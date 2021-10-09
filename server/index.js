@@ -3,6 +3,7 @@ const cors = require('cors');
 const mongoose = require('mongoose')
 const auth = require('./middlewares/auth')
 const userController = require('./controllers/userController');
+const matchController = require('./controllers/matchDayController')
 
 const cookieParser = require('cookie-parser');
 const cookieSecret = 'MySecret';
@@ -42,6 +43,7 @@ async function start() {
     })
 
     app.use('/api/users', userController);
+    app.use('/api/matches', matchController);
 
     app.listen(3000, () => console.log('Server listen on port 3000'));
 }

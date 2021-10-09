@@ -5,8 +5,9 @@ const parserError = require('../utils/errorParser');
 
 
 router.post('/create', isAuth(), isAdmin(), async (req, res) => {
+    console.log(req.body)
     const data = {
-        matches: req.body.matches
+        matches: `${req.body['hostOne']}`
     }
     try {
         const result = await createMatches(data);
