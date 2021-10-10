@@ -43,7 +43,7 @@ export class MatchesCreatorComponent implements OnInit {
   }
 
   createMatchList(): void {
-    console.log(this.form.value)
+    
     if (this.form.invalid) { return }
     const data = this.form.value;
     this.matchServive.postMatches(data).subscribe({

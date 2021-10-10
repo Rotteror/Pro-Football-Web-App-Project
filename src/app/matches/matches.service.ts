@@ -15,8 +15,8 @@ export class MatchesService {
     return this.http.get<any>(`${API_URL}/matches/all`, { withCredentials: true });
   };
 
-  getMatchList(date: string){
-    return this.http.get<IMatchList>(`${API_URL}/matches/${date}`, { withCredentials: true })
+  getMatchList(date: {}){
+    return this.http.post<IMatchList>(`${API_URL}/matches/date`, {date}, { withCredentials: true })
   }
 
   postMatches(data: {}) {

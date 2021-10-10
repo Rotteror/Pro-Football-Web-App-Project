@@ -19,7 +19,6 @@ router.post('/create', isAuth(), isAdmin(), async (req, res) => {
         let result = '0:0';
         let match = {};
         match[key] = result;
-
         Object.assign(finalArray, match)
     }
 
@@ -32,10 +31,8 @@ router.post('/create', isAuth(), isAdmin(), async (req, res) => {
     }
 })
 
-router.get('/matches/:date', isAuth(), async (req, res) => {
-    console.log(req.params)
-    const date = req.params.date
-
+router.post('/date', isAuth(), async (req, res) => {
+    const date = req.body.date
     try {
         const data = await getMatchListByDate(date);
         res.status(200).json(data)
