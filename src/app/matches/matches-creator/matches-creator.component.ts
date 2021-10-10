@@ -15,6 +15,7 @@ export class MatchesCreatorComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private router: Router, private matchServive: MatchesService) {
     this.form = this.fb.group({
+      betsDay: ['', Validators.required],
       hostOne: ['', Validators.required],
       awayOne: ['', Validators.required],
       hostTwo: ['', Validators.required],
@@ -42,6 +43,7 @@ export class MatchesCreatorComponent implements OnInit {
   }
 
   createMatchList(): void {
+    console.log(this.form.value)
     if (this.form.invalid) { return }
     const data = this.form.value;
     this.matchServive.postMatches(data).subscribe({

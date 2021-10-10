@@ -24,66 +24,83 @@
         <form class="list-matches" [formGroup]="form" (ngSubmit)='createMatchList()'>
             <div class="league-match">
                 <p>Create Math List</p>
+                <div>
+                    <label for="start">Match list date:</label>
+                    <input type="date" id="start" name="matches-start" value="" min="2021-01-01"
+                        max="2050-12-31" formControlName="betsDay">
+                </div>
             </div>
-            {{form.value | json}}
             <div class="li-match">
                 <div class="match-row">
                     <label class="match">Match No.1</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostOne">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostOne">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayOne">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.2</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostTwo">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostTwo">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayTwo">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.3</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostThree">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostThree">
                     <label for="space"><strong>&mdash;</strong></label>
-                    <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayThree">
+                    <input class="input-match" type="text" name="name" placeholder="Watford"
+                        formControlName="awayThree">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.4</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostFour">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostFour">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayFour">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.5</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostFive">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostFive">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayFive">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.6</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostSix">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostSix">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awaySix">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.7</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostSeven">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostSeven">
                     <label for="space"><strong>&mdash;</strong></label>
-                    <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awaySeven">
+                    <input class="input-match" type="text" name="name" placeholder="Watford"
+                        formControlName="awaySeven">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.8</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostEight">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostEight">
                     <label for="space"><strong>&mdash;</strong></label>
-                    <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayEight">
+                    <input class="input-match" type="text" name="name" placeholder="Watford"
+                        formControlName="awayEight">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.9</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostNine">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostNine">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayNine">
                 </div>
                 <div class="match-row">
                     <label class="match">Match No.10</label>
-                    <input class="input-match" type="text" name="name" placeholder="Liverpool" formControlName="hostTen">
+                    <input class="input-match" type="text" name="name" placeholder="Liverpool"
+                        formControlName="hostTen">
                     <label for="space"><strong>&mdash;</strong></label>
                     <input class="input-match" type="text" name="name" placeholder="Watford" formControlName="awayTen">
                 </div>
