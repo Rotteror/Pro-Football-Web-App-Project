@@ -10,6 +10,10 @@ export class MatchesService {
 
   }
 
+  getAllMatchDays() {
+    return this.http.get<any>(`${API_URL}/matches/all`, { withCredentials: true });
+  };
+
   postMatches(data: {}) {
     return this.http.post<any>(`${API_URL}/matches/create`, data, { withCredentials: true });
   };
