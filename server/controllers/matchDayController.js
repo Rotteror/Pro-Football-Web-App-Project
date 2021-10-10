@@ -32,8 +32,9 @@ router.post('/create', isAuth(), isAdmin(), async (req, res) => {
     }
 })
 
-router.get('/matches/date', isAuth(), async (req, res) => {
-    const date = req.params._id
+router.get('/matches/:date', isAuth(), async (req, res) => {
+    console.log(req.params)
+    const date = req.params.date
 
     try {
         const data = await getMatchListByDate(date);
