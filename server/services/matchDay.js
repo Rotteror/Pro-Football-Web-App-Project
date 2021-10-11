@@ -16,8 +16,7 @@ async function getAllMatchDays() {
 
 async function getMatchListByDate(date) {
     const matchList = await MatchDay.find({ betsDay: date }).populate('matches');
-    console.log(matchList)
-    return matchList;
+    return matchList[0];
 }
 
 

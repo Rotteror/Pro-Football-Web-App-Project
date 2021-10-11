@@ -118,13 +118,9 @@
 
 .li-match {
     list-style: none;
+    border-bottom: 0.3rem solid #ffd43b;
 }
 
-.space-rows {
-    height: 0.5rem;
-    background: linear-gradient(45deg,#ffd43b, #fff);
-    border-radius: 7px;
-}
 
 /********************/
 /* MATCHES WIDGET COMPONENTS */
