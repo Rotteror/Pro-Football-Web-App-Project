@@ -187,3 +187,9 @@
 .bookie-cta:hover {
     background-color: #ffd43b;
 }
+
+.selected {
+    background-color: #fab005;
+    border-radius: 100px;
+}
+

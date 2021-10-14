@@ -5,7 +5,7 @@ import { MatchPickComponent } from './match-pick/match-pick.component';
 import { MatchListComponent } from './match-list/match-list.component';
 import { MatchesRoutingModule } from './matches-routing.module';
 import { MatchesCreatorComponent } from './matches-creator/matches-creator.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchesService } from './matches.service';
 
 
@@ -20,6 +20,7 @@ import { MatchesService } from './matches.service';
   imports: [
     CommonModule,
     MatchesRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   exports: [

@@ -1,7 +1,7 @@
 <section class="section-matches">
     <header class="header header-layout">
         <a href="#">
-            <img class="logo" src="../../../assets/profootball-logo.png" alt="ProFootball Logo">
+            <img class="logo" src="../../../assets/profootball-logo-test.png" alt="ProFootball Logo">
         </a>
         <nav class="main-nav">
             <ul class="main-nav-list">
@@ -19,23 +19,26 @@
             <div class="content-container">
                 <header>
                     <div class="head-row">
-                        <h2 class="heading-secondary head-row">Matches</h2>
-                        
+                        <h2 class="heading-secondary head-row">Today Matches</h2>
+
                     </div>
                 </header>
-                <ul class="list-matches">
-                    <div class="league-match">
-                        <p>English Premier League</p>
-                        <input type="date" id="start" name="matches-start" value="{{currentDate}}" min="2021-01-01"
-                        max="2050-12-31">
+                <div *ngIf="!matchList">
+                    <div class="head-row">
+                        <h2 class="heading-secondary head-row">No matches for today</h2>
                     </div>
-                    <li class="li-match" *ngFor="let matches of matchList">
+                </div>
+                <ul class="list-matches" *ngIf="matchList">
+                    <div class="league-match">
+                        <p>Date: {{currentDate}}</p>
+                    </div>
+                    <li class="li-match" *ngFor="let match of matchList">
                         <div class="match-row">
-                            <p class="match-name">{{matches}}</p>
+                            <p class="match-name">{{match}}</p>
                             <div class="pick-prediction">
-                                <button class="btn-predictions">Home</button>
-                                <button class="btn-predictions">Draw</button>
-                                <button class="btn-predictions">Away</button>
+                                <button (click)="clickHandler($event,match)" class="btn-predictions">Home</button>
+                                <button (click)="clickHandler($event,match)" class="btn-predictions" >Draw</button>
+                                <button (click)="clickHandler($event,match)" class="btn-predictions" >Away</button>
                             </div>
                         </div>
                     </li>
