@@ -15,9 +15,9 @@ export class MatchPickComponent implements OnInit {
 
   currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
   matchList: any | undefined;
-  isClicked: boolean = false;
+  toggle: boolean = false;
   predictions: { [key: string]: string } = {};
-
+  
 
   constructor(private matchService: MatchesService) {
 
@@ -45,5 +45,10 @@ export class MatchPickComponent implements OnInit {
     console.log(this.predictions)
   }
 
+  toggleClick(): void{
+    const el = document.getElementById('content');
+    el?.setAttribute('class', 'appear');
+    this.toggle = !this.toggle
+  }
 
 }

@@ -107,6 +107,30 @@
                         </li>
                     </ul>
                 </div>
+            </div>   
+        </div>
+        <button id="tog" class="toggle" (click)="toggleClick()">My Bet</button>
+        <div id="content" [ngClass]="{'appear': toggle}">
+            <div class="my-predictions">
+                <div class="subheading heading">My Bets</div>
+                <div class="ul-header">
+                    <p class="p-tittle">Matches</p><span class="span-title">Prediction</span>
+                </div>
+                <ul class="selection-container">
+                    <li class="match"><p>Liverpool - Man Utd</p><span>Home</span></li>
+                    <li class="match"><p>Juventus - Porto</p><span>Draw</span></li>
+                    <li class="match"><p>Inter - Milan</p><span>Away</span></li>
+                    <li class="match"><p>CSKA - Levski</p><span>Home</span></li>
+                    <li class="match"><p>Real Madrid - Barcelona</p><span>Draw</span></li>
+                    <li class="match"><p>Pirin - Svoge</p><span>Away</span></li>
+                    <li class="match"><p>Watford - Newcastle</p><span>Home</span></li>
+                    <li class="match"><p>Leicester - Brentford</p><span>Draw</span></li>
+                    <li class="match"><p>Siena - Verona</p><span>Home</span></li>
+                    <li class="match"><p>Monza - Spezia</p><span>Away</span></li>
+                </ul>
+                <div class="btn-confirm-div">
+                    <button class="btn-confirm">Confirm</button>
+                </div>
             </div>
         </div>
     </div>
