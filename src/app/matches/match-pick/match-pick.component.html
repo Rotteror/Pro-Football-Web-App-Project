@@ -37,8 +37,8 @@
                             <p class="match-name">{{match}}</p>
                             <div class="pick-prediction">
                                 <button (click)="clickHandler($event,match)" class="btn-predictions">Home</button>
-                                <button (click)="clickHandler($event,match)" class="btn-predictions" >Draw</button>
-                                <button (click)="clickHandler($event,match)" class="btn-predictions" >Away</button>
+                                <button (click)="clickHandler($event,match)" class="btn-predictions">Draw</button>
+                                <button (click)="clickHandler($event,match)" class="btn-predictions">Away</button>
                             </div>
                         </div>
                     </li>
@@ -107,9 +107,9 @@
                         </li>
                     </ul>
                 </div>
-            </div>   
+            </div>
         </div>
-        <button id="tog" class="toggle" (click)="toggleClick()">My Bet <p class="bet-number">2</p></button>
+        <button id="tog" class="toggle" (click)="toggleClick()">My Bet <p class="bet-number">{{betsCount}}</p></button>
         <div id="content" [ngClass]="{'appear': toggle}">
             <div class="my-predictions">
                 <div class="subheading heading">My Bets</div>
@@ -117,16 +117,9 @@
                     <p class="p-tittle">Matches</p><span class="span-title">Prediction</span>
                 </div>
                 <ul class="selection-container">
-                    <li class="match"><p>Liverpool - Man Utd</p><span>Home</span></li>
-                    <li class="match"><p>Juventus - Porto</p><span>Draw</span></li>
-                    <li class="match"><p>Inter - Milan</p><span>Away</span></li>
-                    <li class="match"><p>CSKA - Levski</p><span>Home</span></li>
-                    <li class="match"><p>Real Madrid - Barcelona</p><span>Draw</span></li>
-                    <li class="match"><p>Pirin - Svoge</p><span>Away</span></li>
-                    <li class="match"><p>Watford - Newcastle</p><span>Home</span></li>
-                    <li class="match"><p>Leicester - Brentford</p><span>Draw</span></li>
-                    <li class="match"><p>Siena - Verona</p><span>Home</span></li>
-                    <li class="match"><p>Monza - Spezia</p><span>Away</span></li>
+                    <li class="match" *ngFor="let match of predictions | keyvalue">
+                        <p>{{match.key}}</p><span>{{match.value}}</span>
+                    </li>
                 </ul>
                 <div class="btn-confirm-div">
                     <button class="btn-confirm">Confirm</button>

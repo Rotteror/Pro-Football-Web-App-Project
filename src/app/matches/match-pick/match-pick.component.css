@@ -221,7 +221,8 @@
     text-align: center;
     border-radius: 50%;
     font-weight: 600;
-    background-color: #ffd43b;
+    /* background-color: #ffd43b; */
+    background-color: #fff;
 }
 
 #content {

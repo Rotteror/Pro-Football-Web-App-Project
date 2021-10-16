@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
-
 import { MatchesService } from '../matches.service';
-import { map, tap } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
+
+
 
 
 @Component({
@@ -17,15 +18,23 @@ export class MatchPickComponent implements OnInit {
   matchList: any | undefined;
   toggle: boolean = false;
   predictions: { [key: string]: string } = {};
-  
+
+
+  get betsCount() {
+    return Object.keys(this.predictions).length
+  }
+
+  // Try Approach with ngFor key|value pair
+  // dataSource = new BehaviorSubject(this.predictions);
+  // myBets = this.dataSource.asObservable();
+
 
   constructor(private matchService: MatchesService) {
-
   }
+
 
   ngOnInit(): void {
     this.fetchMatches(this.currentDate);
-
   }
 
   fetchMatches(currentDate: string): void {
@@ -40,12 +49,9 @@ export class MatchPickComponent implements OnInit {
     const element = e.target as HTMLElement;
     const prediction = '' + element.textContent;
     this.predictions[match] = prediction
-    console.log(prediction)
-    console.log(match)
-    console.log(this.predictions)
   }
 
-  toggleClick(): void{
+  toggleClick(): void {
     const el = document.getElementById('content');
     el?.setAttribute('class', 'appear');
     this.toggle = !this.toggle
