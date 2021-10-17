@@ -320,7 +320,6 @@
 }
 
 .btn-confirm:hover {
-
     background-color: #fcc419;
 }
 
@@ -328,5 +327,13 @@
     font-size: 1.4rem;
     color: #555;
     font-weight: 500;
+}
+
+/* TEST */
+#active {
+    border: none;
+    border-radius: 9px;
+    font-weight: 600;
+    background-color: #fab005;
 }
 

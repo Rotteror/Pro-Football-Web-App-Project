@@ -53,6 +53,12 @@ export class MatchPickComponent implements OnInit {
   clickHandler(e: Event, match: string): void {
     const element = e.target as HTMLElement;
     const prediction = '' + element.textContent;
+    const parentDiv = element.parentNode?.children; 
+    if(parentDiv){
+      Array.from(parentDiv).forEach(e => e.removeAttribute('id'));
+    }
+    
+    element.setAttribute('id', 'active');
     this.predictions[match] = prediction
   }
 
@@ -64,6 +70,14 @@ export class MatchPickComponent implements OnInit {
 
   removeSelection(matchName: string) {
     return delete this.predictions[matchName];
+  }
+
+  postPredictionHandler(){
+    if((Object.keys(this.predictions).length < 10)){
+      console.log('You need to predict all 10 matches!')
+      return;
+    }
+    console.log(this.predictions)
   }
 
 }
