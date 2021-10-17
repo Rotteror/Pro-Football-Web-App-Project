@@ -34,7 +34,12 @@
                     </div>
                     <li class="li-match" *ngFor="let match of matchList">
                         <div class="match-row">
-                            <p class="match-name">{{match}}</p>
+                            <p class="match-name">
+                                <span>
+                                    <fa-icon class="match-icon" [icon]="icons.faFutbol"></fa-icon>
+                                </span>
+                                {{match}}
+                            </p>
                             <div class="pick-prediction">
                                 <button (click)="clickHandler($event,match)" class="btn-predictions">Home</button>
                                 <button (click)="clickHandler($event,match)" class="btn-predictions">Draw</button>
@@ -118,7 +123,9 @@
                 </div>
                 <ul class="selection-container">
                     <li class="match" *ngFor="let match of predictions | keyvalue">
-                        <p>{{match.key}}</p><span>{{match.value}}</span>
+                        <p> <span>
+                                <fa-icon class="match-icon-list" [icon]="icons.faTimesCircle" (click)="removeSelection(match.key)"></fa-icon>
+                            </span> {{match.key}}</p><span>{{match.value}}</span>
                     </li>
                 </ul>
                 <div class="btn-confirm-div">

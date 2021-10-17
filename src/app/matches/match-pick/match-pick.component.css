@@ -97,7 +97,12 @@
 
 .match-name {
     font-size: 1.8rem;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 1.5rem;
+}
+
+.match-icon {
+    font-size: 1.4rem;
+    color: #555;
 }
 
 .pick-prediction {
@@ -317,5 +322,11 @@
 .btn-confirm:hover {
 
     background-color: #fcc419;
-} 
+}
+
+.match-icon-list {
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
 

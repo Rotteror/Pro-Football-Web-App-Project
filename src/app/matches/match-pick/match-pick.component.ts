@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { formatDate } from '@angular/common';
 import { MatchesService } from '../matches.service';
 import { map } from 'rxjs/operators'
+import { faFutbol, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,6 +20,10 @@ export class MatchPickComponent implements OnInit {
   toggle: boolean = false;
   predictions: { [key: string]: string } = {};
 
+  icons = {
+    faFutbol,
+    faTimesCircle
+  }
 
   get betsCount() {
     return Object.keys(this.predictions).length
@@ -52,9 +57,13 @@ export class MatchPickComponent implements OnInit {
   }
 
   toggleClick(): void {
-    const el = document.getElementById('content');
-    el?.setAttribute('class', 'appear');
+    // const el = document.getElementById('content');
+    // el?.setAttribute('class', 'appear');
     this.toggle = !this.toggle
+  }
+
+  removeSelection(matchName: string) {
+    return delete this.predictions[matchName];
   }
 
 }
