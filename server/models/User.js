@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, required: true },
     fullName: { type: String, required: true },
     address: { type: String, required: true },
-    predictions: [{ type: ObjectId, ref: "Prediction", default: [] }],
+    betPredictions: [{ type: ObjectId, ref: "Prediction", default: [] }],
     hashedPassword: { type: String, required: true },
 })
 

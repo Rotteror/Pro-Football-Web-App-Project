@@ -22,18 +22,20 @@ async function getMatchListByDate(date) {
 }
 
 async function createPrediction(authorId, predictions) {
-    const user = await User.findById(authorId);
+    const user = await User.findById(authorId).populate('predictions').lean();
     if (!user) {
         throw new Error('Please Log in')
     };
-
+    
+    console.log(user)
+    
     const prediction = new Prediction();
     prediction.author = authorId;
-    prediction.predictions = predictions
-    console.log(prediction)
-    await prediction.save();
+    prediction.bets = predictions
+    
 
-    user.predictions.push(prediction);
+    await prediction.save();
+    user.betPredictions.push(prediction);
     await user.save();
 }
 
