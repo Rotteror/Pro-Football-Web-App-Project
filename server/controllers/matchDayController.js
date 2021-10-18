@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { isAuth, isAdmin } = require('../middlewares/guards');
-const { createMatches, getAllMatchDays, getMatchListByDate } = require('../services/matchDay');
+const { createMatches, getAllMatchDays, getMatchListByDate, createPrediction } = require('../services/matchDay');
 const parserError = require('../utils/errorParser');
 
 
@@ -8,7 +8,7 @@ const parserError = require('../utils/errorParser');
 router.get('/all', async (req, res) => {
     const data = await getAllMatchDays();
     res.status(200).send(data);
-})
+});
 
 router.post('/create', isAuth(), isAdmin(), async (req, res) => {
     const data = Object.values(req.body);
@@ -29,7 +29,7 @@ router.post('/create', isAuth(), isAdmin(), async (req, res) => {
         const message = parserError(err);
         res.status(err.status).json({ message });
     }
-})
+});
 
 router.post('/date', isAuth(), async (req, res) => {
     const date = req.body.date
@@ -40,6 +40,21 @@ router.post('/date', isAuth(), async (req, res) => {
         const message = parserError(err);
         res.status(err.status).json({ message });
     }
+});
+
+
+router.post('/add-predictions', isAuth(), async (req, res) => {
+    const predictions = req.body.predictions;
+    const authorId = req.body.authorId;
+    console.log(predictions)
+    console.log(authorId)
+    try {
+        const result = await createPrediction(authorId, predictions);
+        res.status(200).json(result);
+    } catch (err) {
+        const message = parserError(err);
+        res.status(err.status).json({ message });
+    };
 })
 
 

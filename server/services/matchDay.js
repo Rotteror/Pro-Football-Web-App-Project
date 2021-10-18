@@ -1,4 +1,6 @@
 const MatchDay = require('../models/MatchDay');
+const Prediction = require('../models/Prediction');
+const User = require('../models/User')
 
 
 async function createMatches(data, betsDay) {
@@ -19,9 +21,26 @@ async function getMatchListByDate(date) {
     return matchList[0];
 }
 
+async function createPrediction(authorId, predictions) {
+    const user = await User.findById(authorId);
+    if (!user) {
+        throw new Error('Please Log in')
+    };
+
+    const prediction = new Prediction();
+    prediction.author = authorId;
+    prediction.predictions = predictions
+    console.log(prediction)
+    await prediction.save();
+
+    user.predictions.push(prediction);
+    await user.save();
+}
+
 
 module.exports = {
     createMatches,
     getAllMatchDays,
-    getMatchListByDate
+    getMatchListByDate,
+    createPrediction,
 }
