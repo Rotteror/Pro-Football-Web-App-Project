@@ -12,6 +12,8 @@
                 <li><a class="main-nav-link" routerLink="/matches/create">Add Matches</a></li>
                 <li *ngIf="!isLogged"><a class="main-nav-link" routerLink="/register">Sign up</a></li>
                 <li *ngIf="!isLogged"><a class="main-nav-link" routerLink="/login">Login</a></li>
+                <li *ngIf="isLogged"><a class="main-nav-link" href="javascript: void(0)"
+                        (click)="logoutHandler()">Logout</a></li>
                 <li><a class="main-nav-link nav-cta" href="#">Bet now</a></li>
             </ul>
         </nav>
