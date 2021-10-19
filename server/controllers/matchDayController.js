@@ -46,13 +46,14 @@ router.post('/date', isAuth(), async (req, res) => {
 router.post('/add-predictions', isAuth(), async (req, res) => {
     const predictions = req.body.predictions;
     const authorId = req.body.authorId;
-   
+    const date = req.body.date
+
     try {
-        const result = await createPrediction(authorId, predictions);
+        const result = await createPrediction(authorId, predictions,date);
         res.status(200).json(result);
     } catch (err) {
         const message = parserError(err);
-        res.status(err.status).json({ message });
+        res.status(err.status || 500).json({ message });
     };
 })
 

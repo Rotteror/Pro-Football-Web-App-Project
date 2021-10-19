@@ -29,7 +29,7 @@ module.exports = {
     },
     isAdmin() {
         return (req, res, next) => {
-            if (req.user._id !== '615af9421ccf7993a8cfed67') {
+            if (req.user._id !== '616e85aac44ed01982270d98') {
                 res.status(403).json({ message: 'Only admin can post matches.' })
             } else {
                 next();

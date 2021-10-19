@@ -78,7 +78,7 @@ export class MatchPickComponent implements OnInit {
       return;
     }
     const authorId = localStorage.getItem('_id')
-    this.matchService.postPredictions(authorId, this.predictions).subscribe({
+    this.matchService.postPredictions(authorId, this.predictions, this.currentDate).subscribe({
       complete: () => {
         console.log('successfully place your prediction for today')
       }

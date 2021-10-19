@@ -23,7 +23,7 @@ export class MatchesService {
     return this.http.post<any>(`${API_URL}/matches/create`, data, { withCredentials: true });
   };
 
-  postPredictions(authorId: any, predictions: {}) {
-    return this.http.post<any>(`${API_URL}/matches/add-predictions`, { authorId, predictions }, { withCredentials: true })
+  postPredictions(authorId: any, predictions: {}, date: string) {
+    return this.http.post<any>(`${API_URL}/matches/add-predictions`, { authorId, predictions, date }, { withCredentials: true })
   }
 }

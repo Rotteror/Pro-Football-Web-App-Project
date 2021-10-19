@@ -5,7 +5,6 @@ const User = require('../models/User')
 
 async function createMatches(data, betsDay) {
     const result = new MatchDay({ betsDay });
-    // result.matches.push(data);
     Object.assign(result.matches, data)
     await result.save();
 
@@ -21,22 +20,32 @@ async function getMatchListByDate(date) {
     return matchList[0];
 }
 
-async function createPrediction(authorId, predictions) {
-    const user = await User.findById(authorId).populate('predictions').lean();
+async function createPrediction(authorId, predictions, date) {
+    const user = await User.findById(authorId).populate('betPredictions');
+    const matchesForToday = await MatchDay.find({ betsDay: date });
+   
     if (!user) {
         throw new Error('Please Log in')
     };
+
+    const participantsArray = matchesForToday[0].participants;
+    const userPresent = participantsArray.some(p => p._id == authorId);
     
-    console.log(user)
+    if (userPresent) {
+        throw new Error('You already participate for this daily challange!')
+    }
     
     const prediction = new Prediction();
     prediction.author = authorId;
     prediction.bets = predictions
-    
 
     await prediction.save();
+
     user.betPredictions.push(prediction);
+    matchesForToday[0].participants.push(user);
+    await matchesForToday[0].save();
     await user.save();
+
 }
 
 
