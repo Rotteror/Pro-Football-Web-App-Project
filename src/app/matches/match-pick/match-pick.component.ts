@@ -3,6 +3,7 @@ import { formatDate } from '@angular/common';
 import { MatchesService } from '../matches.service';
 import { map } from 'rxjs/operators'
 import { faFutbol, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 
@@ -34,7 +35,7 @@ export class MatchPickComponent implements OnInit {
   // myBets = this.dataSource.asObservable();
 
 
-  constructor(private matchService: MatchesService) {
+  constructor(private matchService: MatchesService, private router: Router) {
   }
 
 
@@ -79,8 +80,12 @@ export class MatchPickComponent implements OnInit {
     }
     const authorId = localStorage.getItem('_id')
     this.matchService.postPredictions(authorId, this.predictions, this.currentDate).subscribe({
-      complete: () => {
-        console.log('successfully place your prediction for today')
+      next: () => {
+        this.router.navigate([''])
+      },
+      error: (err) => {
+        console.log(err.error.message) //TO DO => to implemnt Toastr for Server messages 
+        this.router.navigate(['/matches'])
       }
     })
   }

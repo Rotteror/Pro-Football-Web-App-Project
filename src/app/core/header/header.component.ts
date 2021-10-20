@@ -16,6 +16,8 @@ export class HeaderComponent implements OnInit {
     return this.userService.isLogged;
   }
 
+  
+
   icons = {
     faChevronDown,
     faFacebook,
@@ -35,6 +37,7 @@ export class HeaderComponent implements OnInit {
     this.userService.logout().subscribe({
       next: () => {
         localStorage.removeItem('_id');
+        localStorage.removeItem('username');
         this.router.navigate(['/']);
       },
       error: (err) => {

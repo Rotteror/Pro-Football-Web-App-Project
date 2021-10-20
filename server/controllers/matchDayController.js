@@ -53,7 +53,7 @@ router.post('/add-predictions', isAuth(), async (req, res) => {
         res.status(200).json(result);
     } catch (err) {
         const message = parserError(err);
-        res.status(err.status || 500).json({ message });
+        res.status(err.status || 409).json({ message });
     };
 })
 
