@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 const pattern = /^(?=.{5,20}$)(^[a-zA-Z]+[0-9]?([-_\.][a-zA-Z0-9]+)*[a-zA-Z0-9]$)/;
+@Injectable()
 export class CustomValidatorService {
 
   constructor() { }
