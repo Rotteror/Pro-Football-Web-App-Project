@@ -9,6 +9,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { StandingComponent } from './standing/standing.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AuthActivate } from './guards/auth.activate';
 
 
 
@@ -33,6 +34,9 @@ import { AppRoutingModule } from '../app-routing.module';
     FeatureLogosComponent,
     HowItWorksComponent,
     HomeComponent
+  ],
+  providers: [
+    AuthActivate
   ]
 })
 export class CoreModule { }
