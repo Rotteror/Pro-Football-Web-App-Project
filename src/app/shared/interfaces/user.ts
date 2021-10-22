@@ -5,4 +5,5 @@ export interface IUser {
     fullName: string,
     adress: string,
     betPredictions: [],
+    role: string,
 }

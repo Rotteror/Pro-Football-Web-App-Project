@@ -16,6 +16,10 @@ export class HeaderComponent implements OnInit {
     return this.userService.isLogged;
   }
 
+  get isAdmin():boolean {
+    return this.userService.isAdmin;
+  }
+
   
 
   icons = {

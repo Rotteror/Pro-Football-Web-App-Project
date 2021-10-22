@@ -15,6 +15,10 @@ export class UserService {
     return localStorage.getItem('_id') != undefined
   }
 
+  get isAdmin():boolean {
+    return localStorage.getItem('role') == 'Admin'
+  }
+
   constructor(private http: HttpClient) { }
 
 

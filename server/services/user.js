@@ -13,7 +13,7 @@ async function register(username, email, password, fullName, address) {
         err.status = 409;
         throw err;
     }
-    
+
     const existUsername = users.find(u => u.username.toLocaleLowerCase() === username.toLocaleLowerCase())
     if (existUsername) {
         const err = new Error('Username already taken !');
@@ -29,7 +29,7 @@ async function register(username, email, password, fullName, address) {
         address,
         hashedPassword
     });
-   
+
     await user.save();
     return {
         _id: user._id,
@@ -45,6 +45,7 @@ async function register(username, email, password, fullName, address) {
 async function login(email, password) {
     //check if user exist
     const user = await User.findOne({ email });
+    let isAdmin = false;
     if (!user) {
         const err = new Error('Incorrect email or password!');
         err.status = 401;
@@ -57,7 +58,13 @@ async function login(email, password) {
         err.status = 401;
         throw err;
     }
-       
+
+    if (user._id == '616e85aac44ed01982270d98') {
+        console.log('is admin')
+        user.role = 'Admin'
+    }else{
+        user.role = 'User'
+    }
 
     return {
         _id: user._id,
@@ -65,6 +72,7 @@ async function login(email, password) {
         email: user.email,
         fullName: user.fullName,
         address: user.address,
+        role: user.role,
         accessToken: createToken(user)
     };
 
@@ -78,6 +86,7 @@ function createToken(user) {
         email: user.email,
         fullName: user.fullName,
         address: user.address,
+        role: user.role,
     }, SECRET)
 
     return token;
