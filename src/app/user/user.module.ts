@@ -7,13 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './user.service';
 import { CustomValidatorService } from './validator/custom-validator.service';
 import { UserRoutingModule } from './user-routing.module';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,9 @@ import { UserRoutingModule } from './user-routing.module';
   ],
   exports: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
+
   ],
   providers:[
     UserService,

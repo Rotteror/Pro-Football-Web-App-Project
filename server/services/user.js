@@ -45,7 +45,6 @@ async function register(username, email, password, fullName, address) {
 async function login(email, password) {
     //check if user exist
     const user = await User.findOne({ email });
-    let isAdmin = false;
     if (!user) {
         const err = new Error('Incorrect email or password!');
         err.status = 401;
@@ -60,7 +59,6 @@ async function login(email, password) {
     }
 
     if (user._id == '616e85aac44ed01982270d98') {
-        console.log('is admin')
         user.role = 'Admin'
     }else{
         user.role = 'User'
