@@ -3,8 +3,8 @@
     <div class="container flex-profile">
         <div class="navigation">
             <p class="user">
-                <button class="userSymbol">R</button>
-                <span class="username">Rotteror</span>
+                <button class="userSymbol">{{user?.username?.substring(0,1)}}</button>
+                <span class="username">{{user?.username}}</span>
             </p>
             <nav class="profile-navigation">
                 <ul class="nav-items">
@@ -21,7 +21,7 @@
                 <div class="user-stats">
                     <div class="img-holder">
                         <img class="img-profile" src="../../../assets/section-header.jpg" alt="logo">
-                        <button class="user-picture">R</button>
+                        <button class="user-picture">{{user?.username?.substring(0,1)}}</button>
                     </div>
                     <div class="user-details">
                         <p>{{user?.username}}</p>
@@ -47,38 +47,35 @@
                 <div class="user-info">
                     <h5 class="heading-tertiary user-heading">User info</h5>
                     <div>
-                        <form class="profile-form">
+                        <form  [formGroup]="editUser" class="profile-form" (ngSubmit)="editUserHandler()">
                             <div class="input-container">
                                 <span class="placeholder" for="username">Username</span>
-                                <input class="input-profile" type="text">
+                                <input class="input-profile" type="text" formControlName="username">
                             </div>
                             <div class="input-container">
                                 <span class="placeholder" for="email">Email</span>
-                                <input class="input-profile" type="text">
+                                <input class="input-profile" type="text" formControlName="email">
                             </div>
                             <div class="row-2">
                                 <div class="input-container first-name">
-                                    <span class="placeholder" for="firstName">First Name</span>
-                                    <input class="input-profile" type="text">
+                                    <span class="placeholder" for="fullName">Full Name</span>
+                                    <input class="input-profile" type="text" formControlName="fullName">
                                 </div>
-                                <div class="input-container last-name">
-                                    <span class="placeholder" for="lastName">Last Name</span>
-                                    <input class="input-profile" type="text">
-                                </div>
+                               
                                 <div class="input-container phone">
                                     <span class="placeholder" for="phone">Phone</span>
-                                    <input class="input-profile" type="text">
+                                    <input class="input-profile" type="text" formControlName="phone">
                                 </div>
                             </div>
                             <div class="row-3">
                                 <div class="input-container">
                                     <span class="placeholder" for="address">Address</span>
-                                    <input class="input-profile address" type="text">
+                                    <input class="input-profile address" type="text" formControlName="address">
                                 </div>
 
                                 <div class="input-container">
                                     <span class="placeholder" for="aboutMe">About Me</span>
-                                    <textarea class="input-profile aboutMe" rows="20" cols="20"></textarea>
+                                    <textarea class="input-profile aboutMe" rows="20" cols="20" formControlName="aboutMe"></textarea>
                                 </div>
                             </div>
                             <div class="btn-form">

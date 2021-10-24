@@ -15,7 +15,7 @@ export class UserService {
     return localStorage.getItem('_id') != undefined
   }
 
-  get isAdmin():boolean {
+  get isAdmin(): boolean {
     return localStorage.getItem('role') == 'Admin'
   }
 
@@ -40,7 +40,11 @@ export class UserService {
     );
   };
 
-  getUserById(id: string){
+  getUserById(id: string) {
     return this.http.get<IUser>(`${API_URL}/users/profile/${id}`, { withCredentials: true });
+  }
+
+  editUserInfo(id: any, data: {}) {
+    return this.http.post<IUser>(`${API_URL}/users/profile/${id}`, data, { withCredentials: true });
   }
 }

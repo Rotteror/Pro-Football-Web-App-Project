@@ -3,7 +3,8 @@ export interface IUser {
     email: string,
     username: string,
     fullName: string,
-    adress: string,
+    address: string,
     betPredictions: [],
+    aboutMe: string,
     role: string,
 }

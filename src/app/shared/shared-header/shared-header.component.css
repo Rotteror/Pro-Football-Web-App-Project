@@ -21,7 +21,7 @@
     gap: 3.2rem;
 }
 
-.main-nav-link:link, .main-nav-link:visited {
+.main-nav-link {
     display: inline-block;
     text-decoration: none;
     color: #000;
@@ -29,7 +29,7 @@
     font-weight: 500;
 }
 
-.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta,
 .main-nav-link.nav-cta:visited {
     padding: 0.6rem 1.8rem;
     border-radius: 9px;
