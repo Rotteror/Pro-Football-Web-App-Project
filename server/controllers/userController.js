@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { authCookieName } = require('../config');
-const { register, login } = require('../services/user');
+const { register, login, getUserById } = require('../services/user');
 
 router.post('/register', async (req, res) => {
 

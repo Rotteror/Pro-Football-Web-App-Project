@@ -8,6 +8,7 @@ import { MatchesCreatorComponent } from './matches-creator/matches-creator.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchesService } from './matches.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -20,6 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,

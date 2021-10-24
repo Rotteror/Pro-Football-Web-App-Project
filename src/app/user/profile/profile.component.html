@@ -8,9 +8,9 @@
             </p>
             <nav class="profile-navigation">
                 <ul class="nav-items">
-                    <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faArrowAltCircleLeft"></fa-icon>Home</a></li>
+                    <li><a class="nav-link" routerLink="/"><fa-icon class="nav-icon" [icon]="icons.faArrowAltCircleLeft"></fa-icon>Home</a></li>
                     <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faCalendarAlt"></fa-icon>History</a></li>
-                    <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faFutbol"></fa-icon>Matches</a></li>
+                    <li><a class="nav-link" routerLink="/matches"><fa-icon class="nav-icon" [icon]="icons.faFutbol"></fa-icon>Matches</a></li>
                     <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faBullseye"></fa-icon>My Score</a></li>
                 </ul>
             </nav>
@@ -24,7 +24,7 @@
                         <button class="user-picture">R</button>
                     </div>
                     <div class="user-details">
-                        <p>Rotteror</p>
+                        <p>{{user?.username}}</p>
                         <p>Bronze</p>
                         <p>Man who loves football</p>
                     </div>

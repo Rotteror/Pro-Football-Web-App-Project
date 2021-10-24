@@ -30,7 +30,8 @@ export class ProfileComponent implements OnInit {
     const id = localStorage.getItem('_id')
     if (!id) { return }
     this.user = undefined;
-    this.userService.getUserById(id).subscribe(u => this.user = u)
+    this.userService.getUserById(id).subscribe(u => this.user = u);
+  
   }
 
 }
