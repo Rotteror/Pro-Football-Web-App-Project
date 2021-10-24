@@ -20,6 +20,8 @@ export class HeaderComponent implements OnInit {
     return this.userService.isAdmin;
   }
 
+  userId: string | null | undefined
+
   
 
   icons = {
@@ -34,6 +36,7 @@ export class HeaderComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    this.userId = localStorage.getItem('_id');
   }
 
 
