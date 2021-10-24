@@ -8,6 +8,8 @@ const userSchema = new mongoose.Schema({
     fullName: { type: String, required: true },
     address: { type: String, required: true },
     betPredictions: [{ type: ObjectId, ref: "Prediction", default: [] }],
+    phone: { type: String, default: '' },
+    aboutMe: { type: String, default: '' },
     role: { type: String },
     hashedPassword: { type: String, required: true },
 })

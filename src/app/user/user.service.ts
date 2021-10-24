@@ -45,6 +45,6 @@ export class UserService {
   }
 
   editUserInfo(id: any, data: {}) {
-    return this.http.post<IUser>(`${API_URL}/users/profile/${id}`, data, { withCredentials: true });
+    return this.http.put<IUser>(`${API_URL}/users/${id}`, data, { withCredentials: true });
   }
 }

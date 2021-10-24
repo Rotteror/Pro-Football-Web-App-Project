@@ -60,7 +60,7 @@ async function login(email, password) {
 
     if (user._id == '616e85aac44ed01982270d98') {
         user.role = 'Admin'
-    }else{
+    } else {
         user.role = 'User'
     }
 
@@ -79,6 +79,12 @@ async function login(email, password) {
 
 async function getUserById(id) {
     return await User.findById(id).populate('betPredictions').lean();
+}
+
+async function updateUserInfo(id, updated) {
+    const original = await User.findById(id);
+    Object.assign(original, updated);
+    return original.save();
 }
 
 
@@ -117,4 +123,5 @@ module.exports = {
     register,
     login,
     getUserById,
+    updateUserInfo
 }

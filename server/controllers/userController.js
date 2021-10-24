@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { authCookieName } = require('../config');
-const { register, login, getUserById } = require('../services/user');
+const { register, login, getUserById, updateUserInfo } = require('../services/user');
+const { isAuth, isOwner } = require('../middlewares/guards');
 
 router.post('/register', async (req, res) => {
 
@@ -9,7 +10,7 @@ router.post('/register', async (req, res) => {
     const address = req.body.address;
     const email = req.body.email;
     const password = req.body.password;
-    
+
     try {
         if (!email.trim()) {
             throw new Error('Email is required');
@@ -50,12 +51,30 @@ router.get('/logout', async (req, res) => {
 
 router.get('/profile/:id', async (req, res) => {
     const id = req.params.id;
-  
-    try{
+
+    try {
         const user = await getUserById(id);
         res.status(200).json(user);
-    }catch(err){
-        res.status(409).json({message: err.message})
+    } catch (err) {
+        res.status(409).json({ message: err.message })
+    }
+})
+
+router.put('/:id', isAuth(), async (req, res) => {
+    const updated = {
+        username: req.body.username,
+        email: req.body.email,
+        fullName: req.body.fullName,
+        address: req.body.address,
+        phone: req.body.phone,
+        aboutMe: req.body.aboutMe,
+    };
+    try {
+        const result = await updateUserInfo(req.params.id, updated);
+        res.status(200).json(result);
+    } catch (err) {
+        const message = parseError(err);
+        res.status(err.status || 400).json({ message });
     }
 })
 

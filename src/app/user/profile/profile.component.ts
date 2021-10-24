@@ -28,7 +28,8 @@ export class ProfileComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       fullName: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      aboutMe: ['', [Validators.required]]
+      aboutMe: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
     })
   }
 
@@ -48,6 +49,7 @@ export class ProfileComponent implements OnInit {
         email: this.user.email,
         fullName: this.user.fullName,
         address: this.user.address,
+        phone: this.user.phone,
         aboutMe: this.user.aboutMe,
       })
     });
@@ -59,6 +61,7 @@ export class ProfileComponent implements OnInit {
     if (data.invalid) {
       return;
     }
+    
     const confirmed = confirm('Are you sure you want to edit your info!');
     if (confirmed) {
       this.userService.editUserInfo(userId, data).subscribe({
