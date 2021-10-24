@@ -6,13 +6,8 @@
 }
 
 .navigation {
-    background-color: aqua;
     
-}
-
-.profile-layout {
-    
-    flex-basis: 85%;
+   
 }
 
 .flex-profile {
@@ -20,11 +15,18 @@
     
 }
 
+.profile-layout {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 85%;
+   
+}
+
 .navigation {
     display: flex;
     align-items: center;
     flex-direction: column;
-    flex-basis: 15%;
+    flex-basis: 10%;
 }
 
 .profile-container {
@@ -37,20 +39,21 @@
 
 /* **** */
 .nav-items {
-    list-style-type: none;
     display: flex;
     flex-direction: column;
-    font-size: 1.6rem;
+    list-style-type: none;
     padding: 1rem 0.5rem;
-    gap: 1rem;
+    gap: 1.5rem;
+    
 }
 
 .user{
-    padding: 1rem 0;
+    padding: 2rem 1rem;
     font-size: 1.8rem;
     font-weight: 500;
     color: #555;
     display: flex;
+    gap: 0.3rem;
     align-items: center;
     justify-content: center;
     margin-bottom: 3rem;
@@ -61,12 +64,18 @@
     height: 3.2rem;
     border-radius: 50%;
     border: none;
-    background-color: #fff;
+    background-color: #fab005;
     font-weight: 500;
 }
 
-.nav-link:link {
+.nav-link:link, .nav-link:visited {
+    display: block;
     text-decoration: none;
+    font-size: 1.6rem;
+    color: #555;
+    font-weight: 500;
+    
+    
 }
 
 /* USER LAYOUT */
@@ -77,6 +86,7 @@
 
 .user-stats {
     flex-basis: 40%;
+    width: 28rem;
     box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.08) ;
     border-radius: 11px;
     height: 50rem;
