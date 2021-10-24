@@ -77,6 +77,11 @@ async function login(email, password) {
 };
 
 
+async function getUserById(id) {
+    return await User.findById(id).populate('betPredictions').lean();
+}
+
+
 function createToken(user) {
     const token = jwt.sign({
         _id: user.id,
@@ -111,4 +116,5 @@ function createToken(user) {
 module.exports = {
     register,
     login,
+    getUserById,
 }

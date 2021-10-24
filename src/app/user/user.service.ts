@@ -39,4 +39,8 @@ export class UserService {
       tap(() => this.currentUser = undefined)
     );
   };
+
+  getUserById(id: string){
+    return this.http.get<IUser>(`${API_URL}/users/profile/${id}`, { withCredentials: true });
+  }
 }
