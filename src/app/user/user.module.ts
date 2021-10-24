@@ -8,6 +8,8 @@ import { UserService } from './user.service';
 import { CustomValidatorService } from './validator/custom-validator.service';
 import { UserRoutingModule } from './user-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -19,8 +21,10 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     HttpClientModule,
     FormsModule,
+    FontAwesomeModule,
     ReactiveFormsModule,
     UserRoutingModule,
   ],

@@ -16,9 +16,9 @@ import { MatchesModule } from './matches/matches.module';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     UserModule,
     CoreModule,
-    SharedModule,
     MatchesModule,
     HttpClientModule,
     FontAwesomeModule,
