@@ -1,0 +1,50 @@
+.league-match{
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem 3rem;
+    background: linear-gradient(45deg,#ffd43b, #fff);
+    /* background-color: #f1f3f5; */
+    border-radius: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.head-row {
+    margin-bottom: 3.2rem;
+}
+
+.list-matches {
+    width: 100%;
+}
+
+.match-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    border-radius: 7px;
+}
+
+.match-name {
+    font-size: 1.8rem;
+    padding: 1.5rem 1.5rem;
+}
+
+.match-icon {
+    font-size: 1.4rem;
+    color: #555;
+}
+
+.pick-prediction {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.li-match {
+    list-style: none;
+  
+}

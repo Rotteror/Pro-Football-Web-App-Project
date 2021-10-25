@@ -10,6 +10,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatchesModule } from '../matches/matches.module';
 
 
 
@@ -22,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     CommonModule,
     SharedModule,
+    MatchesModule,
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,

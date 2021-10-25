@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatchesService } from './matches.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SharedModule } from '../shared/shared.module';
+import { HistoryComponent } from './history/history.component';
 
 
 
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     BookieCardsComponent,
     MatchPickComponent,
     MatchListComponent,
-    MatchesCreatorComponent
+    MatchesCreatorComponent,
+    HistoryComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { SharedModule } from '../shared/shared.module';
     BookieCardsComponent,
     MatchPickComponent,
     MatchListComponent,
-    MatchesCreatorComponent
+    MatchesCreatorComponent,
+    HistoryComponent
   ],
   providers:[
     MatchesService

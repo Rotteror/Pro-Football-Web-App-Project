@@ -9,13 +9,13 @@
             <nav class="profile-navigation">
                 <ul class="nav-items">
                     <li><a class="nav-link" routerLink="/"><fa-icon class="nav-icon" [icon]="icons.faArrowAltCircleLeft"></fa-icon>Home</a></li>
-                    <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faCalendarAlt"></fa-icon>History</a></li>
+                    <li><a class="nav-link" href="javascript:void(0)"(click)="showHistory()"><fa-icon class="nav-icon" [icon]="icons.faCalendarAlt"></fa-icon>History</a></li>
                     <li><a class="nav-link" routerLink="/matches"><fa-icon class="nav-icon" [icon]="icons.faFutbol"></fa-icon>Matches</a></li>
                     <li><a class="nav-link" href="#"><fa-icon class="nav-icon" [icon]="icons.faBullseye"></fa-icon>My Score</a></li>
                 </ul>
             </nav>
         </div>
-        <div class="profile-layout">
+        <div class="profile-layout" *ngIf="!visibleHistory">
             <h2 class="heading-secondary sm-gap">User Profile</h2>
             <div class="profile-container">
                 <div class="user-stats">
@@ -25,8 +25,8 @@
                     </div>
                     <div class="user-details">
                         <p>{{user?.username}}</p>
-                        <p>Bronze</p>
-                        <p>Man who loves football</p>
+                        <p>Tier 1</p>
+                        <p>{{user?.aboutMe}}</p>
                     </div>
                     <div class="bottom-div">
                         <!-- <button></button> -->
@@ -44,6 +44,8 @@
                         </div>
                     </div>
                 </div>
+                <!--  -->
+
                 <div class="user-info">
                     <h5 class="heading-tertiary user-heading">User info</h5>
                     <div>
@@ -84,7 +86,12 @@
                         </form>
                     </div>
                 </div>
+               
             </div>
         </div>
+        <div class="user-info" *ngIf="visibleHistory">
+            <app-history></app-history>
+        </div>
+        <!--  -->
     </div>
 </section>

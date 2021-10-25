@@ -13,6 +13,8 @@ export class ProfileComponent implements OnInit {
 
   user!: IUser | undefined
   editUser: FormGroup;
+  visibleHistory: boolean = false;
+
   icons = {
     faCalendarAlt,
     faBackspace,
@@ -61,7 +63,7 @@ export class ProfileComponent implements OnInit {
     if (data.invalid) {
       return;
     }
-    
+
     const confirmed = confirm('Are you sure you want to edit your info!');
     if (confirmed) {
       this.userService.editUserInfo(userId, data).subscribe({
@@ -73,6 +75,10 @@ export class ProfileComponent implements OnInit {
         }
       })
     }
+  }
+
+  showHistory(): void {
+    this.visibleHistory = !this.visibleHistory;
   }
 
 }
