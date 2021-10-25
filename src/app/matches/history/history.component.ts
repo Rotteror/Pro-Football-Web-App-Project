@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { faFutbol, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faFutbol, faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import { map, tap } from 'rxjs/operators';
 import { IUser } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/user/user.service';
+
 
 @Component({
   selector: 'app-history',
@@ -12,9 +14,11 @@ export class HistoryComponent implements OnInit {
 
 
   user: IUser | undefined;
-  
+  prediction: any;
+
   icons = {
-    faFutbol
+    faFutbol,
+    faSlidersH
   }
 
   constructor(private userService: UserService) { }
@@ -26,8 +30,16 @@ export class HistoryComponent implements OnInit {
   loadUserHistory(): void {
     const userId = localStorage.getItem('_id');
     if (!userId) { return }
-    this.userService.getUserById(userId).subscribe(u => this.user = u);
-    
+    this.userService.getUserById(userId)
+      .pipe(tap(m => this.prediction = m.betPredictions))
+      .subscribe(u => this.user = u);
+
+  }
+
+  toggleHandler(e: Event, i: number) {
+    e.stopPropagation();
+    console.log(e)
+    console.log(i)
   }
 
 }
