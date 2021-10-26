@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faFutbol, faSlidersH } from '@fortawesome/free-solid-svg-icons';
-import { map, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { IUser } from 'src/app/shared/interfaces/user';
 import { UserService } from 'src/app/user/user.service';
 
@@ -16,6 +16,8 @@ export class HistoryComponent implements OnInit {
   user: IUser | undefined;
   prediction: any;
 
+  isMenuOpen: boolean = false;
+
   icons = {
     faFutbol,
     faSlidersH
@@ -27,6 +29,7 @@ export class HistoryComponent implements OnInit {
     this.loadUserHistory();
   }
 
+
   loadUserHistory(): void {
     const userId = localStorage.getItem('_id');
     if (!userId) { return }
@@ -36,10 +39,12 @@ export class HistoryComponent implements OnInit {
 
   }
 
-  toggleHandler(e: Event, i: number) {
-    e.stopPropagation();
-    console.log(e)
-    console.log(i)
+  toggleHandler(e: Event, index:any) {
+    const element = e.target as HTMLElement
+    console.log(index)
+    console.log(element)
+   
+
   }
 
 }

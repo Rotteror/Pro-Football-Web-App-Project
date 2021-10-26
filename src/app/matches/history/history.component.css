@@ -18,6 +18,7 @@
 
 .list-matches {
     width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .match-row {
@@ -46,8 +47,9 @@
 
 .li-match {
     list-style: none;
-  
 }
+
+
 
 .pick-prediction {
     display: flex;
@@ -65,4 +67,8 @@
     background-color: none;
    
     
+}
+
+.slider-icon {
+    cursor: pointer;
 }

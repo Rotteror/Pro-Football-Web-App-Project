@@ -13,12 +13,14 @@
                 </span>
             </div>
             <li class="li-match" *ngFor="let match of p.bets | keyvalue">
+            <!-- <li [ngClass]="isMenuOpen ? 'active' : 'li-match'" *ngFor="let match of p.bets | keyvalue"> -->
                 <div class="match-row">
                     <p class="match-name">
                         <span>
                             <fa-icon class="match-icon" [icon]="icons.faFutbol"></fa-icon>
                         </span>
                         {{match.key}}
+                       
                     </p>
                     <div class="pick-prediction">
                         <span class="btn-predictions">{{match.value}}</span>
