@@ -15,7 +15,7 @@ export class HistoryComponent implements OnInit {
 
   user: IUser | undefined;
   prediction: any;
-
+  isOpen: boolean = false;
   isMenuOpen: boolean = false;
 
   icons = {
@@ -39,12 +39,21 @@ export class HistoryComponent implements OnInit {
 
   }
 
-  toggleHandler(e: Event, index:any) {
-    const element = e.target as HTMLElement
-    console.log(index)
-    console.log(element)
-   
+  toggleHandler(index: any) {
 
+    //TO DO FIND BETTER WAY TO DO THIS COLLAPSE LIST
+
+    this.isOpen = !this.isOpen;
+    const ul = document.getElementById(index)?.querySelectorAll('li');
+    if (this.isOpen) {
+      if (ul) {
+        Array.from(ul).forEach(e => e.setAttribute("class", 'li-match'));
+      }
+    } else {
+      if (ul) {
+        Array.from(ul).forEach(e => e.setAttribute("class", 'li-match active'));
+      }
+    }
   }
 
 }

@@ -47,6 +47,7 @@
 
 .li-match {
     list-style: none;
+    display: none;
 }
 
 
@@ -71,4 +72,9 @@
 
 .slider-icon {
     cursor: pointer;
+}
+
+.active {
+   display: block;
+   
 }
