@@ -5,12 +5,10 @@
     background: linear-gradient(45deg,#ffd43b, #fff);
     /* background-color: #f1f3f5; */
     border-radius: 7px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 
 .head-row {
     margin-bottom: 3.2rem;
@@ -19,6 +17,7 @@
 .list-matches {
     width: 100%;
     margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
 }
 
 .match-row {
@@ -27,6 +26,7 @@
     justify-content: space-between;
     background-color: #f8f9fa;
     border-radius: 7px;
+    margin-bottom: 0.5rem;
 }
 
 .match-name {
@@ -47,10 +47,12 @@
 
 .li-match {
     list-style: none;
-    display: none;
+    display: none; 
 }
 
-
+.li-match:nth-child(odd) > div {
+    background-color: #fdfdfe;
+}
 
 .pick-prediction {
     display: flex;
@@ -66,8 +68,6 @@
     border: none;
     border-radius: 7px;
     background-color: none;
-   
-    
 }
 
 .slider-icon {
@@ -76,5 +76,9 @@
 
 .active {
    display: block;
-   
+  
+}
+
+.user-info {
+    flex-grow: 1;
 }

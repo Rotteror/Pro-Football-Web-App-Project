@@ -12,6 +12,7 @@
 
 .flex-profile {
     display: flex;
+    gap: 3rem;
     
 }
 
@@ -27,6 +28,7 @@
     align-items: center;
     flex-direction: column;
     flex-basis: 10%;
+    
 }
 
 .profile-container {
@@ -84,8 +86,6 @@
     font-size: 1.6rem;
     color: #555;
     font-weight: 500;
-    
-    
 }
 
 /* USER LAYOUT */
@@ -128,7 +128,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
 }
 
 .stats {
@@ -162,7 +161,6 @@
 
 .img-holder {
     position:relative;
-    
 }
 
 /* USER INFO */
@@ -177,7 +175,6 @@
 
 .user-heading {
     padding: 0.2rem 2rem;
-    
 }
 
 .input-profile {
