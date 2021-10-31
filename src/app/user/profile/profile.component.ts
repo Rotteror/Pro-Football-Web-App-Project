@@ -68,7 +68,8 @@ export class ProfileComponent implements OnInit {
     if (confirmed) {
       this.userService.editUserInfo(userId, data).subscribe({
         next: () => {
-
+          console.log('user info updated')
+          // TO DO -> Add toastr for UI msg 
         },
         error: (err) => {
           console.log(err.error.message);
