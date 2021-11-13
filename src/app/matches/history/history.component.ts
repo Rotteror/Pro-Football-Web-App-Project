@@ -27,6 +27,7 @@ export class HistoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadUserHistory();
+   
   }
 
 
@@ -40,7 +41,6 @@ export class HistoryComponent implements OnInit {
   }
 
   toggleHandler(index: any) {
-
     //TO DO FIND BETTER WAY TO DO THIS COLLAPSE LIST
 
     this.isOpen = !this.isOpen;

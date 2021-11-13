@@ -78,7 +78,9 @@ async function login(email, password) {
 
 
 async function getUserById(id) {
-    return await User.findById(id).populate('betPredictions').lean();
+    const result = await User.findById(id).populate('betPredictions').lean();
+    result.betPredictions.sort((a,b)=> b.createdAt - a.createdAt); // return bet history in DESC order
+    return result;
 }
 
 async function updateUserInfo(id, updated) {
